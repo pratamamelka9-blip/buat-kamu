@@ -69,7 +69,15 @@ button:hover{
 </head>
 
 <body>
+<audio id="bgm" loop>
+  <source src="Juicy Luicy - Lantas (Official Lyric Video).mp3" type="audio/mpeg">
+</audio>
 
+<script>
+document.addEventListener("click", function() {
+    document.getElementById("bgm").play();
+}, { once: true });
+</script>
 <div class="container">
     <div class="title">for viola…</div>
     <div class="text" id="text"></div>
