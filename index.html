@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Viola…</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+
+body{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.container{
+    width:420px;
+    max-width:90%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,0,0,0.4);
+    text-align:left;
+    line-height:1.6;
+}
+
+.title{
+    text-align:center;
+    font-size:18px;
+    opacity:0.7;
+    margin-bottom:15px;
+}
+
+.text{
+    min-height:180px;
+    white-space:pre-line;
+    font-size:14px;
+}
+
+button{
+    margin-top:20px;
+    padding:8px 18px;
+    border:none;
+    border-radius:20px;
+    background:#ffffff20;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ffffff40;
+}
+
+.fade{
+    animation:fade 0.8s ease;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="title">for viola…</div>
+    <div class="text" id="text"></div>
+    <button onclick="nextText()">lanjut…</button>
+</div>
+
+<script>
+const paragraphs = [
+`aku juga sebenarnya bingung sama perasaan ini. awalnya kupikir biasa aja, cuma teman yang nyaman diajak cerita.`,
+
+`tapi makin lama, tiap kamu ketawa, tiap kamu cerita hal random, tiap kamu bilang “eh tau gak tadi…” itu selalu jadi bagian paling aku tunggu.`,
+
+`aku gak pernah niat posesif. aku sadar, aku bukan siapa-siapa kamu. aku gak punya hak buat ngatur kamu harus dekat sama siapa.`,
+
+`makanya aku pilih diam. bukan karena gak peduli… tapi karena aku takut kalau aku terlalu kelihatan peduli, nanti kamu malah merasa risih.`,
+
+`jujur aja, setiap kamu lebih perhatian ke mereka, lebih responsif, lebih excited… aku ngerasa kecil.`,
+
+`bukan marah. bukan juga benci. cuma ada rasa nyesek yang susah dijelasin. tapi lagi-lagi, aku tahan.`,
+
+`karena aku sadar posisiku cuma sebatas “teman”.`,
+
+`aku cuma pengen kamu tau, kalau selama ini aku berjuang sendiri ngelawan rasa cemburu yang bahkan gak punya hak buat ada.`,
+
+`aku berusaha tetap biasa aja biar kamu tetap nyaman sama aku.`,
+
+`aku juga gak tau ini cinta atau cuma nyaman yang berlebihan.`,
+
+`tapi yang jelas, kamu berarti lebih dari yang kamu kira.`,
+
+`dan kalau suatu hari kamu sadar ada seseorang yang selalu milih diam demi jagain perasaan kamu… itu aku.`,
+
+`aku gak nuntut jawaban sekarang.`,
+
+`kalau setelah ini semuanya tetap sama, aku bakal tetap jadi aku yang biasa.`,
+
+`tapi setidaknya, kamu tau… aku pernah ngerasa sedalam ini sama kamu.`,
+
+`maka dari itu sebelumnya aku ngambek 2 hari tidak ngomong sama kamu… biar rasa cemburu ini hilang.`,
+
+`tapi ternyata… susah juga ngelupainnya.`
+];
+
+let index = 0;
+const textDiv = document.getElementById("text");
+
+function nextText(){
+    if(index < paragraphs.length){
+        textDiv.classList.remove("fade");
+        void textDiv.offsetWidth;
+        textDiv.classList.add("fade");
+        textDiv.innerText = paragraphs[index];
+        index++;
+    } else {
+        document.querySelector("button").innerText = "selesai.";
+    }
+}
+
+// auto tampil pertama
+nextText();
+</script>
+
+</body>
+</html>
